@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+
+import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 import {Header} from '../components/Header';
 
-import {SafeAreaView, AlignTextCenter, Main, ContainerText, AlignCenter, TextInputForm, TextAreaInputForm, ButtonAlign, ButtonForm, ButtonFormText} from '../styles/styles';
-import logo from '../assets/logo.png';
-
+import {SafeAreaView, AlignTextCenter, Main, ContainerText, AlignCenter, ButtonForm, ButtonFormText} from '../styles/styles';
 export function RequestStatus(props: any) {
     
     function handleConclude() {
@@ -21,7 +21,13 @@ export function RequestStatus(props: any) {
             <Main>
                 <AlignCenter>
                     <ContainerText>
-                        <AlignTextCenter>{props.route.params.icon}</AlignTextCenter>
+                        <AlignTextCenter>
+                            {props.route.params.lib == 'Feather' ?  (
+                                <Feather name={props.route.params.icon} size={30} color="black" />
+                            ) : (
+                                <FontAwesome name={props.route.params.icon} size={30} color="black" />                            
+                            )}
+                        </AlignTextCenter>
                         <AlignTextCenter>{props.route.params.title}</AlignTextCenter>
                     </ContainerText>
                     

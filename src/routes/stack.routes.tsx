@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'
 
-import { Welcome } from '../pages/Welcome';
 import { Home } from '../pages/Home';
 import { CreatePost } from '../pages/CreatePost';
 import { EditPost } from '../pages/EditPost';
 import { RequestStatus } from '../pages/RequestStatus';
+import { MyPosts } from '../pages/MyPosts';
 
 export type RootStackParamList = {
     CreatePost: undefined;
@@ -48,6 +48,11 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="RequestStatus"
             component={RequestStatus}
+        />
+
+        <stackRoutes.Screen 
+            name="MyPosts"
+            component={MyPosts}
         />
 
     </stackRoutes.Navigator>

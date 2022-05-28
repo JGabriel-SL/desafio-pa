@@ -5,6 +5,8 @@ export const PostsContext = createContext({})
 
 function PostsProvider({children}) {
     const [posts, setPosts] = useState([]);
+    const [myPosts, setMyPosts] = useState([]);
+    const [favPosts, setFavPosts] = useState([]);
 
     useEffect(() => {
         getPosts();
@@ -20,7 +22,7 @@ function PostsProvider({children}) {
     }
 
     return (
-        <PostsContext.Provider value={[posts, setPosts]}>
+        <PostsContext.Provider value={{posts, setPosts, myPosts, setMyPosts, favPosts, setFavPosts}}>
             {children}
         </PostsContext.Provider>
     )

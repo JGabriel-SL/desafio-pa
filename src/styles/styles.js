@@ -26,7 +26,6 @@ export const Button = styled.TouchableOpacity`
 
 export const Text = styled.Text`
     color: #FFFFFF;
-    font-family: Quicksand_700Bold;
 `
 
 // HOME //
@@ -58,7 +57,6 @@ export const LogoImage = styled.Image`
 export const LogoText = styled.Text`
     color: #fff;
     font-size: 18px;
-    font-family: Quicksand_700Bold;
     flex: 1;
 `
 
@@ -68,8 +66,8 @@ export const DivButton = styled.View`
     flex-direction: row;
 `
 
+
 export const HeaderButton = styled.TouchableOpacity`
-    color: #FFFFFF;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -78,10 +76,21 @@ export const HeaderButton = styled.TouchableOpacity`
     border: 3px solid #fff;
 `
 
-export const HeaderButtonText = styled.Text`
-    font-size: 20px;
-    font-family: Quicksand_700Bold;
+export const HeaderLink = styled.TouchableOpacity`
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+`
+export const HeaderLinkText = styled.Text`
     color: #fff;
+`
+
+export const HeaderButtonText = styled.Text`
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const Content = styled.View`
@@ -97,13 +106,14 @@ export const TextInput = styled.TextInput`
     background-color: #fff;
     color: #111;
     
-    padding: 15px 10px;
+    padding: 10px 10px;
+    max-height: 55px;
     flex: 1;
 `
 
 export const ContentButton = styled.TouchableOpacity`
     width: 100px;
-    height: 55px;
+    max-height: 55px;
     background-color: #199484;
     display: flex;
     justify-content: center;
@@ -145,20 +155,19 @@ export const MainHeader = styled.View`
 `
 
 export const MainButton = styled.TouchableOpacity`
+    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     width: 30px;
     height: 30px
-    border: 3px solid #000;
     margin: 0px 5px;
 `
 
 export const MainButtonText = styled.Text`
-    font-size: 20px;
-    font-family: Quicksand_700Bold;
-    color: #000;
+    //substituido por 
 `
+
 
 export const MainContent = styled.View`
     display: flex;
@@ -225,9 +234,10 @@ export const ButtonForm = styled.TouchableOpacity`
 `
 
 export const ButtonFormText = styled.Text`
-    font-size: 20px;
-    font-family: Quicksand_700Bold;
+    font-size: 18px;
     color: #fff;
+    justify-content: center;
+    align-items: center;
 `
 
 // REQUEST STATUS PAGE //

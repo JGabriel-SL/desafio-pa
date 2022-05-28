@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext, useState } from 'react';
-import {View, Image, Text} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import {View, Modal, Alert, Pressable , Text ,ScrollView, StyleSheet} from 'react-native';
+
+// import { ScrollView } from 'react-native-gesture-handler';
 
 import api from '../services/api';
 
@@ -12,25 +13,33 @@ import { PostsContext } from '../contexts/posts';
 export function CreatePost() {
     const [postTitle, setPostTitle] = useState('');
     const [postBody, setPostBody] = useState('');
+    const [modalVisible, setModalVisible] = useState(false);
+
     const navigation = useNavigation();
 
-    const [posts, setPosts] = useContext(PostsContext);
+    const {myPosts, setMyPosts} = useContext(PostsContext);
 
 
     function handlePost() {
         try {
-            api.post('/posts', {title: postTitle, body: postBody }).then(response => {
-                console.log(response.data.title);
-                console.log(posts)
-                // console.log(++posts.length);
-                setPosts(response.data)
-            })
-            // navigation.navigate('RequestStatus', {
-            //     title: 'Seu post foi criado com sucesso!',
-            //     icon: 'created'
-            // });
+            if(postBody !== '' && postTitle !== '') {
+                api.post('/posts', {title: postTitle, body: postBody }).then(response => {
+                    setMyPosts([ ...myPosts, {
+                        title: response.data.title,
+                        body: response.data.body,
+                        id: myPosts.length + 1
+                    }])
+                })
+                navigation.navigate('RequestStatus', {
+                    title: 'Seu post foi criado com sucesso!',
+                    icon: 'plus-square',
+                    lib: 'Feather'
+                });
+            } else {
+                setModalVisible(true);
+            }
         } catch (error) {
-            console.log('Deu ruim')
+            console.log(error);
         }
     }
 
@@ -52,13 +61,79 @@ export function CreatePost() {
                     <LabelInput>Conteúdo</LabelInput>
                     <TextAreaInputForm  multiline={true} placeholder="Digite aqui..." onChangeText={setPostBody}/>
                 </View>
-
                 <ButtonAlign>
                     <ButtonForm onPress={handlePost}>
                         <ButtonFormText>Postar</ButtonFormText>
                     </ButtonForm>
                 </ButtonAlign>
             </Main>
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert("O modal foi fechado");
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Text style={styles.modalText}>Por favor, preencha o post com título e o conteúdo!</Text>
+                        <ButtonAlign>
+                            <ButtonForm
+                            onPress={() => setModalVisible(!modalVisible)}
+                            >
+                                <ButtonFormText>Certo!</ButtonFormText>
+                            </ButtonForm>
+                        </ButtonAlign>
+                    </View>
+                </View>
+            </Modal>
         </SafeAreaView>
     );
 }
+
+const styles = StyleSheet.create({
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 22
+    },
+    modalView: {
+      margin: 20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5
+    },
+    button: {
+      borderRadius: 20,
+      padding: 10,
+      elevation: 2
+    },
+    buttonOpen: {
+      backgroundColor: "#F194FF",
+    },
+    buttonClose: {
+      backgroundColor: "#2196F3",
+    },
+    textStyle: {
+      color: "white",
+      fontWeight: "bold",
+      textAlign: "center"
+    },
+    modalText: {
+      marginBottom: 15,
+      textAlign: "center"
+    }
+  });
