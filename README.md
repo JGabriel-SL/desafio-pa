@@ -4,7 +4,7 @@
 
  <img style="width: 10%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/icon.png" />
   
-## Instalando dependencias gerais para a utilização do projeto
+## Instalando dependências gerais para a utilização do projeto
 
 ### 1. Instalar Node 
 
@@ -26,7 +26,7 @@ Acesse o site oficial: https://git-scm.com/book/en/v2/Getting-Started-Installing
 `git clone https://github.com/JGabriel-SL/desafio-pa`<br>
 Após isso, acesse o repositório com `cd desafio-pa`
 
-### 2. Instalando depêndencias do projeto
+### 2. Instalando dependências do projeto
 `npm i` ou `npm install`
 
 obs: Caso você prefira o yarn pode-se utilizar do
