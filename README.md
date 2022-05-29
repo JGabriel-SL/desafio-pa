@@ -1,5 +1,9 @@
-# desafio-pa
+# BlogPosts
 
+### Aplicativo de postagens 
+
+ <img style="width: 10%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/icon.png" />
+  
 ## Instalando dependencias gerais para a utilização do projeto
 
 ### 1. Instalar Node 
@@ -49,3 +53,13 @@ Abra o app no aparelho mobile e scaneie o QRCode na tela.
 ### Também é possível baixar o apk para android
 
 [Download do apk](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jgabriel-sl/BlogPosts-fd52e217f1e34fec83e92001c4dca9e3-signed.apk)
+
+## Imagens do projeto
+
+<div style="display: flex; flex-direction: row">
+  <img style="width: 24%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/screenshots/screen1.jpeg" />
+  <img style="width: 24%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/screenshots/screen2.jpeg" />
+  <img style="width: 24%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/screenshots/screen3.jpeg" />
+  <img style="width: 24%" src="https://github.com/JGabriel-SL/desafio-pa/blob/master/assets/screenshots/screen4.jpeg" />
+</div>
+
