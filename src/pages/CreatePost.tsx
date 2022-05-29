@@ -7,7 +7,7 @@ import {View, Modal, Alert, Pressable , Text ,ScrollView, StyleSheet} from 'reac
 import api from '../services/api';
 
 import {Header} from '../components/Header';
-import {Main, SafeAreaView, PageTitle, TextInputForm, TextAreaInputForm, ButtonForm, ButtonFormText, ButtonAlign, LabelInput} from '../styles/styles';
+import {Main, SafeAreaView, PageTitle, TextInputForm, TextAreaInputForm, ButtonForm, ButtonFormText, ButtonAlign, LabelInput, SafeAreaViewScroll} from '../styles/styles';
 import { PostsContext } from '../contexts/posts';
 
 export function CreatePost() {
@@ -33,7 +33,8 @@ export function CreatePost() {
                 navigation.navigate('RequestStatus', {
                     title: 'Seu post foi criado com sucesso!',
                     icon: 'plus-square',
-                    lib: 'Feather'
+                    lib: 'Feather',
+                    mehandle: true
                 });
             } else {
                 setModalVisible(true);
@@ -44,22 +45,22 @@ export function CreatePost() {
     }
 
     return (
-        <SafeAreaView
-                scrollEnabled={false}
-                keyboardShouldPersistTaps='handled'>
+        <SafeAreaViewScroll
+            keyboardShouldPersistTaps='handled'
+        >
             <Header />
             <PageTitle>Criar Post</PageTitle>
             <Main>
                 <ScrollView
                   scrollEnabled={false}
                   keyboardShouldPersistTaps='handled'
-                >
+                  >
                     <LabelInput>Título do Post</LabelInput>
                     <TextInputForm placeholder="Digite o título..." onChangeText={setPostTitle}/>
                 </ScrollView>
                 <View>
                     <LabelInput>Conteúdo</LabelInput>
-                    <TextAreaInputForm  multiline={true} placeholder="Digite aqui..." onChangeText={setPostBody}/>
+                    <TextAreaInputForm  multiline={false} placeholder="Digite aqui..." onChangeText={setPostBody}/>
                 </View>
                 <ButtonAlign>
                     <ButtonForm onPress={handlePost}>
@@ -76,7 +77,7 @@ export function CreatePost() {
                     Alert.alert("O modal foi fechado");
                     setModalVisible(!modalVisible);
                 }}
-            >
+                >
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <Text style={styles.modalText}>Por favor, preencha o post com título e o conteúdo!</Text>
@@ -90,7 +91,7 @@ export function CreatePost() {
                     </View>
                 </View>
             </Modal>
-        </SafeAreaView>
+        </SafeAreaViewScroll>
     );
 }
 

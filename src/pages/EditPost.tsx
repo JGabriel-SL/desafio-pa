@@ -4,7 +4,7 @@ import {View, Image, Text} from 'react-native';
 import { Feather } from '@expo/vector-icons'; 
 
 import {Header} from '../components/Header';
-import {Main, SafeAreaView, PageTitle, MainHeader, UserIcon, UserName, DivButton, MainButton, MainButtonText,MainContent, LabelInput, TextInputForm, TextAreaInputForm} from '../styles/styles';
+import {Main, SafeAreaView, PageTitle, MainHeader, UserIcon, UserName, DivButton, SafeAreaViewScroll, MainButtonText,MainContent, LabelInput, TextInputForm, TextAreaInputForm} from '../styles/styles';
 import {ButtonAlign, ButtonForm, ButtonFormText} from '../styles/styles';
 import logo from '../assets/icon.png';
 
@@ -38,25 +38,29 @@ export function EditPost(props: any) {
             api.put(`/posts/${id}`, {title: title, body: content }).then(response => {
                 console.log(response)
             })
+            props.navigation.navigate('RequestStatus', {
+                title: 'Seu post foi editado com sucesso!',
+                icon: 'edit',
+                lib: 'Feather'
+            });
         } else if (type == 'me') {
-            let posts = myPosts.filter(t => t.id != id)
+            let posts = myPosts.filter((t, key) => key != id)
             setMyPosts([...posts, {
                 title: title,
                 body: content,
-                id: id
+                // id: posts.length + 1
             }])
-
+            props.navigation.navigate('RequestStatus', {
+                title: 'Seu post foi editado com sucesso!',
+                icon: 'edit',
+                lib: 'Feather',
+                mehandle: true
+            });       
         }
-        props.navigation.navigate('RequestStatus', {
-            title: 'Seu post foi editado com sucesso!',
-            icon: 'edit',
-            lib: 'Feather'
-        });
     }
     
-
     return (
-        <SafeAreaView>
+        <SafeAreaViewScroll>
             <Header />
             <PageTitle>Editar Post</PageTitle>
             <Main>
@@ -86,6 +90,6 @@ export function EditPost(props: any) {
                     </ButtonForm>
                 </ButtonAlign>
             </Main>
-        </SafeAreaView>
+        </SafeAreaViewScroll>
     );
 }

@@ -10,6 +10,9 @@ export function RequestStatus(props: any) {
     
     function handleConclude() {
         props.navigation.navigate('Home');
+        if(props.route.params.mehandle) {
+            props.navigation.navigate('MyPosts');
+        }
     }
 
     return (

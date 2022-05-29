@@ -4,7 +4,7 @@ import {Header} from '../components/Header';
 import { Feather } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 
-import {Content, Main, UserIcon, UserName, MainHeader, MainButton, MainButtonText, TextInput, ContentButton,  SafeAreaView, DivButton, HeaderButtonText} from '../styles/styles';
+import {Content, Main, UserIcon, UserName, MainHeader, MainButton, MainButtonText, TextInput, ContentButton, SafeAreaView, DivButton, HeaderButtonText} from '../styles/styles';
 import {MainContent, MainContentTitle, MainContentText, ScrollView} from '../styles/styles';
 import logo from '../assets/icon.png';
 
@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/core';
 import { FlatList } from 'react-native-gesture-handler';
 
 import Loading from '../components/Loading';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, View} from 'react-native';
 
 export function Home(props: any) {
     const [visible, setVisible] = useState(false);

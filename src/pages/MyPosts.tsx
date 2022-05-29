@@ -31,12 +31,14 @@ export function MyPosts(props: any) {
                 title: 'O post foi deletado com sucesso!',
                 icon: 'trash-2',
                 lib: 'Feather',
+                mehandle: true
             })
         } catch (error) {
             navigation.navigate('RequestStatus', {
                 title: 'Não foi possível deletar o post!',
                 icon: 'trash-2',
-                status: error
+                status: error,
+                mehandle: true
             })
         }
     }
@@ -47,7 +49,7 @@ export function MyPosts(props: any) {
                 <Header />
                 {myPosts.map((post, key) => {
                     return (
-                        <Main key={post.id}>
+                        <Main key={key}>
                             <MainHeader>
                                 <UserIcon source={logo} />
                                 <UserName>You</UserName>
