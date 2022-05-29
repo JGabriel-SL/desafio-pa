@@ -54,12 +54,12 @@ export function MyPosts(props: any) {
                                 <DivButton>
                                     <MainButton onPress={() => handleEditPost(key)}>
                                         <MainButtonText>
-                                            <Feather name="edit" size={30} color="black" />
+                                            <Feather name="edit" size={26} color="black" />
                                         </MainButtonText>
                                     </MainButton>
                                     <MainButton onPress={() => handleDeletePost(post.id)}>
                                         <MainButtonText>
-                                            <Feather name="trash-2" size={30} color="black" />
+                                            <Feather name="trash-2" size={26} color="black" />
                                         </MainButtonText>
                                     </MainButton>
                                 </DivButton>

@@ -23,9 +23,9 @@ export function RequestStatus(props: any) {
                     <ContainerText>
                         <AlignTextCenter>
                             {props.route.params.lib == 'Feather' ?  (
-                                <Feather name={props.route.params.icon} size={30} color="black" />
+                                <Feather name={props.route.params.icon} size={26} color="black" />
                             ) : (
-                                <FontAwesome name={props.route.params.icon} size={30} color="black" />                            
+                                <FontAwesome name={props.route.params.icon} size={26} color="black" />                            
                             )}
                         </AlignTextCenter>
                         <AlignTextCenter>{props.route.params.title}</AlignTextCenter>

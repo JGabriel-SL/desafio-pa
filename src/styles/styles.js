@@ -44,9 +44,16 @@ export const SafeAreaView = styled.SafeAreaView`
 export const HeaderContent = styled.View`
     display: flex;
     padding: 20px;
+    margin-top: 30px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+`
+
+export const HeaderLogo = styled.TouchableOpacity`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `
 
 export const LogoImage = styled.Image`

@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Text, TouchableOpacity} from 'react-native';
 
-import {HeaderContent, LogoImage, LogoText, DivButton, HeaderButton, HeaderButtonText, HeaderLink, HeaderLinkText} from '../styles/styles';
+import {HeaderContent, HeaderLogo, LogoImage, LogoText, DivButton, HeaderButton, HeaderButtonText, HeaderLink, HeaderLinkText} from '../styles/styles';
 import logo from '../assets/icon.png';
 
 import { useNavigation } from '@react-navigation/native';
@@ -23,10 +22,16 @@ export function Header() {
       navigation.navigate("MyPosts");
   }
 
+  function handleHome() {
+      navigation.navigate("Home");
+  }
+
   return (
     <HeaderContent>
-        <LogoImage source={logo} />
-        <LogoText>BLOGPOSTS</LogoText>
+        <HeaderLogo onPress={handleHome} >
+            <LogoImage source={logo} />
+            <LogoText>BLOGPOSTS</LogoText>
+        </HeaderLogo>
         <DivButton>
             <HeaderLink onPress={handleMyPosts}>
                 <HeaderLinkText>Meus posts</HeaderLinkText>

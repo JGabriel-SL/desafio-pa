@@ -138,21 +138,21 @@ function ListItem({ post, handleSavePost, handleEditPost, handleDeletePost, favP
                     <MainButton onPress={() => handleSavePost(post.id)}>
                         <MainButtonText>
                             {favPosts.indexOf(post.id) == -1 ? (
-                                <Feather name="star" size={30} color="black" />
+                                <Feather name="star" size={26} color="black" />
                             ) : (
-                                <FontAwesome name="star" size={30} color="black" />
+                                <FontAwesome name="star" size={26} color="black" />
                             )
                             }
                         </MainButtonText>
                     </MainButton>
                     <MainButton onPress={() => handleEditPost(post.id)}>
                         <MainButtonText>
-                            <Feather name="edit" size={30} color="black" />
+                            <Feather name="edit" size={26} color="black" />
                         </MainButtonText>
                     </MainButton>
                     <MainButton onPress={() => handleDeletePost(post.id)}>
                         <MainButtonText>
-                            <Feather name="trash-2" size={30} color="black" />
+                            <Feather name="trash-2" size={26} color="black" />
                         </MainButtonText>
                     </MainButton>
                 </DivButton>

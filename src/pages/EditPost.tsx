@@ -65,7 +65,7 @@ export function EditPost(props: any) {
                     <UserName>BLOGPOSTS</UserName>
                     <DivButton>
                         <MainButtonText>
-                            <Feather name="edit" size={30} color="black" />
+                            <Feather name="edit" size={26} color="black" />
                         </MainButtonText>
                     </DivButton>
                 </MainHeader>

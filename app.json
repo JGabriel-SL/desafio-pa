@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "teste",
-    "slug": "teste",
+    "name": "BlogPosts",
+    "slug": "BlogPosts",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#93D871"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,12 +18,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jgabriel.blogposts"
     },
     "android": {
-      "adaptiveIcon": {
+      "package": "com.jgabriel.blogposts",
+      "adaptiveIcon": { 
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#93D871"
       }
     },
     "web": {

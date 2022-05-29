@@ -10,12 +10,10 @@ function PostsProvider({children}) {
     const [max, setMax] = useState(10);
     const [loading, setLoading] = useState(false);
 
-
-
     useEffect(() => {
         getPosts();
         return () => {
-            setPosts([]); // This worked for me
+            setPosts([]);
           };
     }, []);
 
@@ -23,7 +21,6 @@ function PostsProvider({children}) {
         if(max > 10 && max <= 100) {
             getMorePosts()
         }
-        
     }, [max])
     
     function getPosts() {

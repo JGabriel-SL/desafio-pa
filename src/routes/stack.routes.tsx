@@ -10,6 +10,9 @@ import { MyPosts } from '../pages/MyPosts';
 export type RootStackParamList = {
     CreatePost: undefined;
     Home: undefined;
+    EditPost: undefined;
+    RequestStatus: undefined;
+    MyPosts: undefined;
 };
 
 const stackRoutes = createStackNavigator<RootStackParamList>();
@@ -25,10 +28,6 @@ const AppRoutes: React.FC = () => (
             }
         }}
     >
-        {/* <stackRoutes.Screen 
-            name="Welcome"
-            component={Welcome}
-        /> */}
 
         <stackRoutes.Screen
             name="Home"
